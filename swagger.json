@@ -1,0 +1,45 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Backend Project API",
+      "version": "1.0.0",
+      "description": "API para la gestión de adopciones de mascotas."
+    },
+    "paths": {
+      "/api/adoption/users": {
+        "get": {
+          "summary": "Obtener todos los usuarios",
+          "responses": {
+            "200": {
+              "description": "Lista de usuarios"
+            }
+          }
+        },
+        "post": {
+          "summary": "Crear un nuevo usuario",
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "firstName": { "type": "string" },
+                    "lastName": { "type": "string" },
+                    "email": { "type": "string" },
+                    "password": { "type": "string" }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "Usuario creado"
+            }
+          }
+        }
+      }
+    }
+  }
+  
